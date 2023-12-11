@@ -3,7 +3,7 @@ import RNA from './RNA.js'
 import controls from './controls.js'
 
 const SAMPLES = 1;
-const game = Runner.instace_;
+const game = Runner.instance_;
 let dinoList = [];
 let dinoIndex = 0;
 let bestScore = 0;
