@@ -15,7 +15,7 @@ function fillDinoList () {
     dinoList[i].load(bestRNA);
     if (i > 0) dinoList[i].mutate(0.5);
   }
-  console.log('Lista de Dinossáuros Criada!');
+  console.log('Lista de Dinos Criada!');
 }
 
 setTimeout(() => {
@@ -37,7 +37,7 @@ setInterval(() => {
       fillDinoList();
       dinoIndex = 0;
       bestScore = 0;
-    }
+    };
     game.restart();
   }
   const {tRex, horizon, currentSpeed, distanceRan, dimensions} = game;
@@ -59,14 +59,14 @@ setInterval(() => {
     const distance = 1 - (utils.getDistance(player, obstacle) / dimensions.WIDTH);
     const speed = player.speed / 6;
     const heigth = Math.tanh(105 - obstacle.y);
-    const [jump, crouch] = dino.compute([
+    const [jump, crounch] = dino.compute([
         distance,
         speed,
         heigth
     ]);
-    if (jump === crouch) return;
+    if (jump === crounch) return;
     if (jump) controls.dispatch('jump');
-    if (crouch) controls.dispatch('crouch');
+    if (crounch) controls.dispatch('crounch');
   };
 }, 100);
 
